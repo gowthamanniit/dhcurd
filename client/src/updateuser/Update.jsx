@@ -22,7 +22,7 @@ const UpdateUser = () => {
     };
 
     useEffect (()=>{
-        axios.get(`http://localhost:8000/api/user/${id}`)
+        axios.get(`https://dhcurd-1.onrender.com/api/user/${id}`)
         .then((response)=>{
             setUser(response.data)
         })
@@ -32,7 +32,7 @@ const UpdateUser = () => {
     },[id]);
     const submitForm = async(e)=>{
         e.preventDefault();
-        await axios.put(`http://localhost:8000/api/update/user/${id}`,user)
+        await axios.put(`https://dhcurd-1.onrender.com/api/update/user/${id}`,user)
         .then((response)=>{
            toast.success(response.data.message,{position:"top-right" });
             navigate("/");
